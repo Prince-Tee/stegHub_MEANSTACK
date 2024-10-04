@@ -15,7 +15,7 @@ Follow these steps to launch a free-tier EC2 instance on AWS:
 7. Review and launch the instance.
 8. Ensure you have the necessary key pair to SSH into your instance.
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/launch%20a%20instance%20on%20aws%20for%20MEAN%20stack.PNG)
 
 ## 2. SSH Into the EC2 Instance
 
@@ -25,7 +25,7 @@ Use the following command to SSH into your EC2 instance:
 ssh -i "your-key.pem" ubuntu@your-public-ip
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/ssh%20into%20your%20instance%20o%20git%20bash%20using%20the%20aws%20IP.PNG)
 
 ## 3. Update Ubuntu
 
@@ -33,15 +33,12 @@ ssh -i "your-key.pem" ubuntu@your-public-ip
 sudo apt update
 ```
 
-![Screenshot](link_to_your_screenshot)
-
 ## 4. Upgrade Ubuntu
 
 ```bash
 sudo apt upgrade
 ```
 
-![Screenshot](link_to_your_screenshot)
 
 ## 5. Add Certificates
 
@@ -51,7 +48,7 @@ Install the required packages:
 sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/insatllling%20certificate%20for%20the%20node%20js.PNG)
 
 ## 6. Install Node.js
 
@@ -67,8 +64,6 @@ Install Node.js:
 sudo apt install -y nodejs
 ```
 
-![Screenshot](link_to_your_screenshot)
-
 ## 7. Install MongoDB
 
 First, install required packages:
@@ -76,19 +71,20 @@ First, install required packages:
 ```bash
 sudo apt-get install -y gnupg curl
 ```
-
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/Install%20gnupg%20and%20curl%20Add%20MongoDB%20GPG%20(Signing)%20Key%20Add%20MongoDB%20Repository.PNG)
 Then, add the MongoDB repository:
 
 ```bash
 curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
 ```
-
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/Install%20gnupg%20and%20curl%20Add%20MongoDB%20GPG%20(Signing)%20Key%20Add%20MongoDB%20Repository.PNG)
 Add the MongoDB source list:
 
 ```bash
 echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 ```
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/Install%20gnupg%20and%20curl%20Add%20MongoDB%20GPG%20(Signing)%20Key%20Add%20MongoDB%20Repository.PNG)
 
 Install MongoDB:
 
@@ -99,28 +95,18 @@ sudo apt-get install -y mongodb-org
 Start the MongoDB server:
 
 ```bash
-sudo service mongodb start
+sudo service mongod start
 ```
 
 Verify that the service is running:
 
 ```bash
-sudo systemctl status mongodb
+sudo systemctl status mongod
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/mongo%20db%20started%20using%20sudo%20service%20mongod%20start%20and%20not%20mongodb.PNG)
 
-## 8. Install Yarn
-
-To install Yarn globally, you can use the following command:
-
-```bash
-npm install --global yarn
-```
-
-![Screenshot](link_to_your_screenshot)
-
-## 9. Create the Project Structure
+## 8. Create the Project Structure
 
 Create a folder named `Books`:
 
@@ -131,10 +117,20 @@ mkdir Books && cd Books
 Initialize the npm project:
 
 ```bash
-yarn init
+npm init
+```
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/creating%20the%20book%20directory%20and%20doing%20npm%20init.PNG)
+
+## 9. Install Yarn
+
+To install Yarn globally, you can use the following command:
+
+```bash
+npm install --global yarn
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/used%20yarn%20instead%20of%20npm.PNG)
+
 
 ## 10. Create the Server File
 
@@ -173,17 +169,21 @@ app.listen(PORT, () => {
 });
 ```
 
-![Screenshot](link_to_your_screenshot)
 
 ## 11. Install Express and Mongoose
 
 Install the necessary packages:
 
 ```bash
-yarn add express mongoose body-parser
+sudo yarn add install express mongoose 
+```
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/using%20yarn%20to%20install%20express%20and%20mogoose.PNG)
+
+```bash
+sudo yarn add install body-parser
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/using%20yarn%20to%20install%20body%20parser.PNG)
 
 ## 12. Set Up Routes
 
@@ -194,6 +194,7 @@ mkdir apps && cd apps
 ```
 
 Create a file named `routes.js`:
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/creating%20the%20folders%20and%20files%20index%20script%20and%20co.PNG)
 
 ```bash
 nano routes.js
@@ -254,7 +255,7 @@ module.exports = function(app) {
 };
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/content%20of%20routes%20js.PNG)
 
 ## 13. Create the Book Model
 
@@ -265,6 +266,7 @@ mkdir models && cd models
 ```
 
 Create a file named `book.js`:
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/creating%20the%20folders%20and%20files%20index%20script%20and%20co.PNG)
 
 ```bash
 nano book.js
@@ -287,7 +289,7 @@ const bookSchema = new mongoose.Schema({
 module.exports = mongoose.model('Book', bookSchema);
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/content%20of%20the%20book%20js%20inside%20the%20app%20folder.PNG)
 
 ## 14. Set Up the Public Directory with AngularJS
 
@@ -304,6 +306,8 @@ mkdir public && cd public
 ```
 
 Add a file named `script.js`:
+
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/creating%20the%20folders%20and%20files%20index%20script%20and%20co.PNG)
 
 ```bash
 nano script.js
@@ -357,12 +361,13 @@ angular.module('myApp', [])
   });
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/content%20of%20the%20script%20js%20inside%20the%20public%20folder%20i%20the%20books.PNG)
 
 ## 15. Create the HTML File
 
 In the `public` folder, create a file named `index.html`:
 
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/creating%20the%20folders%20and%20files%20index%20script%20and%20co.PNG)
 ```bash
 nano index.html
 ```
@@ -402,7 +407,7 @@ Copy and paste the following code into `index.html`:
 </html>
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/content%20of%20the%20index%20html%20in%20the%20publicnfolder.PNG)
 
 ## 16. Start the Server
 
@@ -412,15 +417,18 @@ Start your server with the following command:
 node server.js
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/server%20running%20node%20server%20js.PNG)
 
-## 17. Access the Application
+## 17. Configure PORT 3300 on your ec2 instance
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/added%20port%203300%20for%20mean%20stack%20project.PNG)
+
+## 18. Access the Application
 
 Open your browser and navigate to `http://your-public-ip:3300` to access the application.
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/our%20web%20browser%20running%20at%20ipadreess3300.PNG)
 
 ## Conclusion
 
-This guide has covered the steps required to deploy a MEAN stack application on an AWS EC2 instance. If you encounter any issues, refer to the AWS documentation or consult relevant online resources for troubleshooting assistance.
+This guide has covered the steps required to deploy a MEAN stack application on an AWS EC2 instance.
 ```
