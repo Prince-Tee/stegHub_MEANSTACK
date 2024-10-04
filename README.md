@@ -15,7 +15,7 @@ Follow these steps to launch a free-tier EC2 instance on AWS:
 7. Review and launch the instance.
 8. Ensure you have the necessary key pair to SSH into your instance.
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/launch%20a%20instance%20on%20aws%20for%20MEAN%20stack.PNG)
 
 ## 2. SSH Into the EC2 Instance
 
@@ -25,7 +25,7 @@ Use the following command to SSH into your EC2 instance:
 ssh -i "your-key.pem" ubuntu@your-public-ip
 ```
 
-![Screenshot](link_to_your_screenshot)
+![Screenshot](https://github.com/Prince-Tee/stegHub_MEANSTACK/blob/main/screenshot%20fom%20my%20local%20env/ssh%20into%20your%20instance%20o%20git%20bash%20using%20the%20aws%20IP.PNG)
 
 ## 3. Update Ubuntu
 
